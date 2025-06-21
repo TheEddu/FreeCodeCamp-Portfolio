@@ -1,7 +1,7 @@
+
 function getRandomComputerResult() {
   const options = ["Rock", "Paper", "Scissors"];
-  const randomIndex = Math.floor(Math.random() * options.length);
-  return options[randomIndex];
+  return options[Math.floor(Math.random() * options.length)];
 }
 
 function hasPlayerWonTheRound(player, computer) {
@@ -15,71 +15,61 @@ function hasPlayerWonTheRound(player, computer) {
 let playerScore = 0;
 let computerScore = 0;
 
+const playerScoreSpan = document.getElementById("player-score");
+const computerScoreSpan = document.getElementById("computer-score");
+const roundResultsMsg = document.getElementById("results-msg");
+const winnerMsgElement = document.getElementById("winner-msg");
+const optionsContainer = document.querySelector(".options-container");
+const resetGameBtn = document.getElementById("reset-game-btn");
+const buttons = document.querySelectorAll(".btn");
+
 function getRoundResults(userOption) {
   const computerResult = getRandomComputerResult();
-
   if (hasPlayerWonTheRound(userOption, computerResult)) {
     playerScore++;
-    return `Player wins! ${userOption} beats ${computerResult}`;
+    return `You win! ${userOption} beats ${computerResult}`;
   } else if (computerResult === userOption) {
-    return `It's a tie! Both chose ${userOption}`;
+    return `Tie! Both chose ${userOption}`;
   } else {
     computerScore++;
     return `Computer wins! ${computerResult} beats ${userOption}`;
   }
 }
 
-const playerScoreSpanElement = document.getElementById("player-score");
-const computerScoreSpanElement = document.getElementById("computer-score");
-const roundResultsMsg = document.getElementById("results-msg");
-const winnerMsgElement = document.getElementById("winner-msg");
-const optionsContainer = document.querySelector(".options-container");
-const resetGameBtn = document.getElementById("reset-game-btn");
-
 function showResults(userOption) {
-  roundResultsMsg.innerText = getRoundResults(userOption);
-  computerScoreSpanElement.innerText = computerScore;
-  playerScoreSpanElement.innerText = playerScore;
+  const result = getRoundResults(userOption);
+  roundResultsMsg.innerText = result;
+  roundResultsMsg.classList.remove("animate-pulse");
+  setTimeout(() => roundResultsMsg.classList.add("animate-pulse"), 50);
+  playerScoreSpan.innerText = playerScore;
+  computerScoreSpan.innerText = computerScore;
 
   if (playerScore === 3 || computerScore === 3) {
     winnerMsgElement.innerText = `${
-      playerScore === 3 ? "Player" : "Computer"
-    } has won the game!`;
-
-    resetGameBtn.style.display = "block";
+      playerScore === 3 ? "Player' : 'Computer"
+    }` wins the game!`;
+    winnerMsgElement.classList.remove("text-green-600");
+    winnerMsgElement.classList.add(playerScore === 3 ? "text-blue-600" : "text-red-600");
+    resetGameBtn.classList.remove("hidden");
     optionsContainer.style.display = "none";
+    buttons.forEach((btn => btn.disabled = true));
   }
 
-};
-function resetGame() {
-  playerScore = 0;
-  computerScore = 0;
 
-  playerScoreSpanElement.innerText = playerScore;
-  computerScoreSpanElement.innerText = computerScore;
+  function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreSpan.innerText = score0;
+    computerScoreSpan.innerText = computerScore0;
+    roundResultsMsg.innerText = "";
+    winnerMsgElement.innerText = "";
+    resetGameBtn.classList.add("hidden");
+    optionsContainer.style.display = "block";
+    buttons.forEach(btn => btn.disabled = false);
+  }
 
-  resetGameBtn.style.display = 'none';
+  resetGameBtn.addEventListener("click", resetGame);
 
-  optionsContainer.style.display = 'block';
-
-  winnerMsgElement.innerText = '';
-    roundResultsMsg.innerText = '';
-};
-
-resetGameBtn.addEventListener("click", resetGame);
-
-const rockBtn = document.getElementById("rock-btn");
-const paperBtn = document.getElementById("paper-btn");
-const scissorsBtn = document.getElementById("scissors-btn");
-
-rockBtn.addEventListener("click", function () {
-  showResults("Rock");
-});
-
-paperBtn.addEventListener("click", function () {
-  showResults("Paper");
-});
-
-scissorsBtn.addEventListener("click", function () {
-  showResults("Scissors");
-});
+  document.getElementById("rock-btn").addEventListener("click", () => showResults("Rock"));
+  document.getElementById("paper-btn").addEventListener("click", () => showResults("Paper"));
+  document.getElementById("scissors-btn").addEventListener("click", () => showResults("Scissors"));

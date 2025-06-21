@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Grade Calculator</h1>
+    
+    <div class="mb-4">
+      <label for="scores" class="block text-sm font-medium text-gray-700 mb-2">Enter class scores (comma-separated):</label>
+      <input id="scores" type="text" placeholder="e.g., 56,23,89,42,75,11,68,34,91,19" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    
+    <div class="mb-4">
+      <label for="studentScore" class="block text-sm font-medium text-gray-700 mb-2">Enter your score:</label>
+      <input id="studentScore" type="number" placeholder="e.g., 100" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+    </div>
+    
+    <button onclick="calculate()" class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200">Calculate</button>
+    
+    <div id="result" class="mt-6 text-gray-800"></div>
+  </div>
+
+<script src="./gradeBook.js"></script>
+</body>
+</html>
