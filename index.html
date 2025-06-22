@@ -4,224 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My freeCodeCamp Projects</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <!-- Start Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="">My <span>Portfolio</span></a>
-            </div>
-            <a href="javascript:void(0)" class="ham-burger">
-                <span></span>
-                <span></span>
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <a href="#" class="text-2xl font-bold tracking-wide flex items-center gap-2">
+                <i class="fa-solid fa-code"></i>
+                My <span class="text-yellow-400"> FreeCodeCamp Portfolio</span>
             </a>
-            <div class="nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <nav>
+                <ul class="flex gap-6 text-lg">
+                    <li><a href="#home" class="hover:text-yellow-300 transition">Home</a></li>
+                    <li><a href="#web-design" class="hover:text-yellow-300 transition">Responsive Web Design</a></li>
+                    <li><a href="#javascript-algorithms" class="hover:text-yellow-300 transition">JS & Data Structures</a></li>
+                    <li><a href="#frontend-libraries" class="hover:text-yellow-300 transition">Front End Libraries</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-300 transition">Contact</a></li>
                 </ul>
-            </div>
+            </nav>
         </div>
     </header>
-    <!-- End Header -->
 
-    <!-- Start Home -->
-    <section class="home animate__animated animate__flash" id="home">
-        <div class="container">
-            <h1 class="animate__animated animate__slideInLeft" data-wow-delay="1s">Showcasing My <span>freeCodeCamp</span> Journey</h1>
-            <h1 class="animate__animated animate__slideInRight" data-wow-delay="1s">Explore My <span>Projects</span></h1>
-        </div>
-        <a href="#web-design" class="go-down">
-            <i class="fa fa-angle-down" aria-hidden="true"></i>
+    <!-- Home Section -->
+    <section id="home" class="flex flex-col items-center justify-center min-h-[60vh] bg-gradient-to-br from-blue-100 to-blue-300 text-center animate__animated animate__fadeIn">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-900 animate__animated animate__slideInLeft">Showcasing My <span class="text-yellow-500">freeCodeCamp</span> Journey</h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-8 text-blue-800 animate__animated animate__slideInRight">Explore My <span class="text-yellow-500">Projects</span></h2>
+        <a href="#web-design" class="inline-block mt-4 text-blue-800 hover:text-yellow-500 text-4xl animate-bounce" aria-label="Scroll to projects">
+            <i class="fa fa-angle-down"></i>
         </a>
     </section>
-    <!-- End Home -->
 
-    <!-- Start Responsive Web Design -->
-    <section class="projects" id="web-design">
-        <div class="container">
-            <h2>Responsive Web Design</h2>
-            <p class="title-p">These projects focus on HTML, CSS, and responsive design techniques learned through freeCodeCamp.</p>
-            <div class="content">
-                <div class="box animate__animated animate__bounceInUp">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 1" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Tribute Page</h4>
-                            <p>A simple tribute page built with HTML and CSS.</p>
-                            <a href="./projects/ResponsiveWebDesign/TributePage/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+    <!-- Responsive Web Design Projects -->
+    <section id="web-design" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-blue-900">Responsive Web Design</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                Projects focused on HTML, CSS, and responsive design techniques, developed during the freeCodeCamp curriculum. Each project demonstrates best practices in layout, accessibility, and mobile-first design.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Tribute Page -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/John_Harvard_statue.jpg/220px-John_Harvard_statue.jpg" alt="Tribute Page" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Tribute Page</h3>
+                    <p class="text-gray-700 mb-4 text-center">A tribute to John Harvard, built with semantic HTML and custom CSS. Demonstrates image handling, layout, and accessible markup.</p>
+                    <a href="./projects/ResponsiveWebDesign/TributePage/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 2" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Ferris Wheel</h4>
-                            <p>A responsive survey form designed with CSS Grid.</p>
-                            <a href="./projects/ResponsiveWebDesign/FerrisWheel/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- Ferris Wheel -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.1s;">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Ferris Wheel CSS Animation" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Ferris Wheel Animation</h3>
+                    <p class="text-gray-700 mb-4 text-center">A CSS-only animated Ferris Wheel. Features smooth rotation, color-changing cabins, and a fully responsive design using modern CSS techniques.</p>
+                    <a href="./projects/ResponsiveWebDesign/FerrisWheel/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.4s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 3" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Penguin CSS</h4>
-                            <p>A penguin animated.</p>
-                            <a href="./projects/ResponsiveWebDesign/penguin/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- Penguin CSS -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
+                    <img src="https://cdn.freecodecamp.org/curriculum/css-penguin/preview.png" alt="Penguin CSS" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Penguin CSS</h3>
+                    <p class="text-gray-700 mb-4 text-center">A playful penguin illustration and animation created entirely with HTML and CSS. Showcases advanced positioning, gradients, and keyframe animations.</p>
+                    <a href="./projects/ResponsiveWebDesign/penguin/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Responsive Web Design -->
 
-    <!-- Start JavaScript Algorithms and Data Structures -->
-    <section class="projects" id="javascript-algorithms">
-        <div class="container">
-            <h2>JavaScript Algorithms and Data Structures</h2>
-            <p class="title-p">These projects utilize JavaScript and front-end libraries like React or jQuery.</p>
-            <div class="content">
-                <div class="box animate__animated animate__bounceInUp">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 4" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: GradeBook</h4>
-                            <p>A gradebook.</p>
-                            <a href="./projects/JavaScriptAlgorithmsDataStructures/gradeBook/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+    <!-- JavaScript Algorithms and Data Structures Projects -->
+    <section id="javascript-algorithms" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-blue-900">JavaScript Algorithms and Data Structures</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                Projects built with JavaScript, focusing on algorithms, data manipulation, and DOM interaction. Includes games, utilities, and interactive apps.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- GradeBook -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp">
+                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="GradeBook" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">GradeBook</h3>
+                    <p class="text-gray-700 mb-4 text-center">A grade calculator that computes class averages and assigns letter grades. Demonstrates array manipulation and user input validation.</p>
+                    <a href="./projects/JavaScriptAlgorithmsDataStructures/gradeBook/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 5" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Role Playing Game</h4>
-                            <p>A Role Playing Game</p>
-                            <a href="./projects/JavaScriptAlgorithmsDataStructures/RPG/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- RPG Game -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.1s;">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="RPG Game" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Role Playing Game</h3>
+                    <p class="text-gray-700 mb-4 text-center">A text-based RPG where you fight monsters, collect gold, and upgrade weapons. Uses JavaScript for game logic and DOM updates.</p>
+                    <a href="./projects/JavaScriptAlgorithmsDataStructures/RPG/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 6" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Random Background Color Changer</h4>
-                            <p>A Background Color Changer Generator</p>
-                            <a href="./projects/JavaScriptAlgorithmsDataStructures/RandomBackgroundColorChanger/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- Random Background Color Changer -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Random Background Color Changer" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Random Background Color Changer</h3>
+                    <p class="text-gray-700 mb-4 text-center">A utility that changes the background color to a random dark shade. Demonstrates event handling and DOM manipulation.</p>
+                    <a href="./projects/JavaScriptAlgorithmsDataStructures/RandomBackgroundColorChanger/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 7" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Rock Paper Scissors Game</h4>
-                            <p>A Rock Paper Scissors Game </p>
-                            <a href="./projects/JavaScriptAlgorithmsDataStructures/rockPaperSissors/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- Rock Paper Scissors -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.3s;">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Rock Paper Scissors" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Rock Paper Scissors Game</h3>
+                    <p class="text-gray-700 mb-4 text-center">A classic Rock Paper Scissors game against the computer. Features score tracking, animations, and responsive design.</p>
+                    <a href="./projects/JavaScriptAlgorithmsDataStructures/rockPaperSissors/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 8" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: LocalStorage TODO App</h4>
-                            <p>A TODO App with LocalStorage (Loading...)</p>
-                            <a href="./projects/JavaScriptAlgorithmsDataStructures/TodoApp/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- TODO App -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.4s;">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="TODO App" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">LocalStorage TODO App</h3>
+                    <p class="text-gray-700 mb-4 text-center">A task manager that saves your tasks in the browser using localStorage. Includes add, edit, and delete functionality.</p>
+                    <a href="./projects/JavaScriptAlgorithmsDataStructures/TodoApp/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 9" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: Spam Filter</h4>
-                            <p>A Spam Filter project using regex (Loading...)</p>
-                            <a href="./projects/JavaScriptAlgorithmsDataStructures/" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- Spam Filter (Loading...) -->
+                <div class="bg-white rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.5s;">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Spam Filter" class="w-full h-40 object-cover rounded mb-4 opacity-60">
+                    <h3 class="text-xl font-semibold mb-2">Spam Filter <span class="text-yellow-500">(Coming Soon)</span></h3>
+                    <p class="text-gray-700 mb-4 text-center">A regex-based spam filter project. <span class="italic">Loading...</span></p>
+                    <a href="#" class="btn bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed opacity-60">View Project</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End JavaScript Algorithms and Data Structures -->
 
-    <!-- Start Front End Libraries Projects -->
-    <section class="projects" id="frontend-libraries">
-        <div class="container">
-            <h2>Front End Libraries Projects</h2>
-            <p class="title-p">These projects utilize JavaScript and front-end libraries like React or jQuery.</p>
-            <div class="content">
-                <div class="box animate__animated animate__bounceInUp">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 000" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: CatPhotoApp</h4>
-                            <p>A quote generator built with React and API integration.</p>
-                            <a href="./projects/FrontEndDevelopmentLibraries/catApp/index.html" class="btn">View Project</a>
-                        </div>
-                    </div>
+    <!-- Front End Libraries Projects -->
+    <section id="frontend-libraries" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-2 text-blue-900">Front End Libraries Projects</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+                Projects using popular front-end libraries such as React and jQuery, focusing on component-based architecture and reusable UI elements.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- CatPhotoApp -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp">
+                    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="CatPhotoApp" class="w-full h-40 object-cover rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">CatPhotoApp</h3>
+                    <p class="text-gray-700 mb-4 text-center">A fun and interactive cat photo app, built with Bootstrap and jQuery. Features responsive layout, styled buttons, and form elements.</p>
+                    <a href="./projects/FrontEndDevelopmentLibraries/catApp/index.html" class="btn bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">View Project</a>
                 </div>
-                <div class="box animate__animated animate__bounceInUp" data-wow-delay="0.2s">
-                    <div class="inner">
-                        <div class="img">
-                            <img src="placeholder.jpg" alt="Project 000" />
-                        </div>
-                        <div class="text">
-                            <h4>Project: ?????</h4>
-                            <p>??????????</p>
-                            <a href="./projects/FrontEndDevelopmentLibraries/" class="btn">View Project</a>
-                        </div>
-                    </div>
+                <!-- Placeholder for future project -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col items-center animate__animated animate__fadeInUp" style="animation-delay:0.1s;">
+                    <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Coming Soon" class="w-full h-40 object-cover rounded mb-4 opacity-60">
+                    <h3 class="text-xl font-semibold mb-2">More Projects Coming Soon</h3>
+                    <p class="text-gray-700 mb-4 text-center">Stay tuned for more projects using React, Redux, and other modern libraries!</p>
+                    <a href="#" class="btn bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed opacity-60">View Project</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Front End Libraries Projects -->
 
-
-    <!-- Start Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="content">
-                <div class="box text animate__animated animate__slideInRight">
-                    <h2>My Profiles</h2>
-                    <div class="social">
-                        <a href=""><span class="fa fa-linkedin"></span></a>
-                        <a href=""><span class="fa fa-github"></span></a>
-                    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <h2 class="text-3xl font-bold mb-4">Contact & Profiles</h2>
+                <div class="flex gap-6 mb-4">
+                    <a href="https://www.linkedin.com/in/seu-linkedin" target="_blank" rel="noopener" class="text-white hover:text-yellow-400 text-3xl transition" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/theeddu" target="_blank" rel="noopener" class="text-white hover:text-yellow-400 text-3xl transition" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
+                <p class="text-center text-lg">Feel free to connect or check out my code on GitHub!</p>
             </div>
         </div>
     </section>
-    <!-- End Contact -->
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-gray-300 py-4 text-center text-sm">
+        &copy; 2024 My freeCodeCamp Portfolio. All rights reserved.
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="scripts/script.js"></script>
